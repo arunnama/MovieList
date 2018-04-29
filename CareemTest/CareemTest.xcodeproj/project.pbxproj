@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9A9B93B2095CFA100F78C02 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93A2095CFA100F78C02 /* NetworkClient.swift */; };
+		C9A9B93E2095D05D00F78C02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93D2095D05D00F78C02 /* Constants.swift */; };
 		C9DA77392095A20400F09588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA77382095A20400F09588 /* AppDelegate.swift */; };
 		C9DA773E2095A20400F09588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9DA773C2095A20400F09588 /* Main.storyboard */; };
 		C9DA77412095A20400F09588 /* CareemTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9DA773F2095A20400F09588 /* CareemTest.xcdatamodeld */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9A9B93A2095CFA100F78C02 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		C9A9B93D2095D05D00F78C02 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9DA77352095A20400F09588 /* CareemTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareemTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DA77382095A20400F09588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DA773D2095A20400F09588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9A9B9392095CF6C00F78C02 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C9A9B93A2095CFA100F78C02 /* NetworkClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C9A9B93C2095D03200F78C02 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C9A9B93D2095D05D00F78C02 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		C9DA772C2095A20400F09588 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +121,8 @@
 		C9DA77372095A20400F09588 /* CareemTest */ = {
 			isa = PBXGroup;
 			children = (
+				C9A9B93C2095D03200F78C02 /* Utils */,
+				C9A9B9392095CF6C00F78C02 /* Networking */,
 				C9DA77692095CB7A00F09588 /* Controllers */,
 				C9DA77382095A20400F09588 /* AppDelegate.swift */,
 				C9DA773C2095A20400F09588 /* Main.storyboard */,
@@ -274,6 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9DA77412095A20400F09588 /* CareemTest.xcdatamodeld in Sources */,
+				C9A9B93E2095D05D00F78C02 /* Constants.swift in Sources */,
+				C9A9B93B2095CFA100F78C02 /* NetworkClient.swift in Sources */,
 				C9DA776D2095CBF800F09588 /* MoviesViewController.swift in Sources */,
 				C9DA776B2095CB9400F09588 /* MovieCell.swift in Sources */,
 				C9DA77392095A20400F09588 /* AppDelegate.swift in Sources */,
