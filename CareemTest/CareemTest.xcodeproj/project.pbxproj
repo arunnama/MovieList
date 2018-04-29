@@ -15,7 +15,7 @@
 		C9DA77512095A20500F09588 /* CareemTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA77502095A20500F09588 /* CareemTestTests.swift */; };
 		C9DA775C2095A20500F09588 /* CareemTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA775B2095A20500F09588 /* CareemTestUITests.swift */; };
 		C9DA776B2095CB9400F09588 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA776A2095CB9400F09588 /* MovieCell.swift */; };
-		C9DA776D2095CBF800F09588 /* MoviesViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA776C2095CBF800F09588 /* MoviesViewControllerTableViewController.swift */; };
+		C9DA776D2095CBF800F09588 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA776C2095CBF800F09588 /* MoviesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		C9DA775B2095A20500F09588 /* CareemTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareemTestUITests.swift; sourceTree = "<group>"; };
 		C9DA775D2095A20500F09588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9DA776A2095CB9400F09588 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
-		C9DA776C2095CBF800F09588 /* MoviesViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewControllerTableViewController.swift; sourceTree = "<group>"; };
+		C9DA776C2095CBF800F09588 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C9DA776A2095CB9400F09588 /* MovieCell.swift */,
-				C9DA776C2095CBF800F09588 /* MoviesViewControllerTableViewController.swift */,
+				C9DA776C2095CBF800F09588 /* MoviesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9DA77412095A20400F09588 /* CareemTest.xcdatamodeld in Sources */,
-				C9DA776D2095CBF800F09588 /* MoviesViewControllerTableViewController.swift in Sources */,
+				C9DA776D2095CBF800F09588 /* MoviesViewController.swift in Sources */,
 				C9DA776B2095CB9400F09588 /* MovieCell.swift in Sources */,
 				C9DA77392095A20400F09588 /* AppDelegate.swift in Sources */,
 			);
