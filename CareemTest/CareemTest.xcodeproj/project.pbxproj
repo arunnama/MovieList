@@ -13,6 +13,7 @@
 		C9A9B9442096357F00F78C02 /* HistoryDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B9432096357F00F78C02 /* HistoryDataStoreTests.swift */; };
 		C9A9B94520963DF100F78C02 /* HistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B9412096348400F78C02 /* HistoryDataStore.swift */; };
 		C9A9B94620963DF200F78C02 /* HistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B9412096348400F78C02 /* HistoryDataStore.swift */; };
+		C9A9B948209640C100F78C02 /* ImageDonwload.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B947209640C100F78C02 /* ImageDonwload.swift */; };
 		C9DA77392095A20400F09588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA77382095A20400F09588 /* AppDelegate.swift */; };
 		C9DA773E2095A20400F09588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9DA773C2095A20400F09588 /* Main.storyboard */; };
 		C9DA77412095A20400F09588 /* CareemTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9DA773F2095A20400F09588 /* CareemTest.xcdatamodeld */; };
@@ -46,6 +47,7 @@
 		C9A9B93D2095D05D00F78C02 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9A9B9412096348400F78C02 /* HistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataStore.swift; sourceTree = "<group>"; };
 		C9A9B9432096357F00F78C02 /* HistoryDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataStoreTests.swift; sourceTree = "<group>"; };
+		C9A9B947209640C100F78C02 /* ImageDonwload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDonwload.swift; sourceTree = "<group>"; };
 		C9DA77352095A20400F09588 /* CareemTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CareemTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9DA77382095A20400F09588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9DA773D2095A20400F09588 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		C9A9B93F2095D47E00F78C02 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				C9A9B947209640C100F78C02 /* ImageDonwload.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9A9B9422096348400F78C02 /* HistoryDataStore.swift in Sources */,
+				C9A9B948209640C100F78C02 /* ImageDonwload.swift in Sources */,
 				C9DA77412095A20400F09588 /* CareemTest.xcdatamodeld in Sources */,
 				C9A9B93E2095D05D00F78C02 /* Constants.swift in Sources */,
 				C9A9B93B2095CFA100F78C02 /* NetworkClient.swift in Sources */,
