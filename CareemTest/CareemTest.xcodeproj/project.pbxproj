@@ -11,6 +11,9 @@
 		C9505E89209784B900B2D198 /* SearchMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E88209784B800B2D198 /* SearchMovie.swift */; };
 		C9505E8C209784FD00B2D198 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E8B209784FD00B2D198 /* Movie.swift */; };
 		C9505E8E2097851A00B2D198 /* MovieResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E8D2097851A00B2D198 /* MovieResult.swift */; };
+		C9505E922097889B00B2D198 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E8F2097889A00B2D198 /* Alerts.swift */; };
+		C9505E932097889B00B2D198 /* MovieErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E902097889A00B2D198 /* MovieErrors.swift */; };
+		C9505E942097889B00B2D198 /* NSError+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E912097889A00B2D198 /* NSError+Util.swift */; };
 		C9A9B93B2095CFA100F78C02 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93A2095CFA100F78C02 /* NetworkClient.swift */; };
 		C9A9B93E2095D05D00F78C02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93D2095D05D00F78C02 /* Constants.swift */; };
 		C9A9B9422096348400F78C02 /* HistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B9412096348400F78C02 /* HistoryDataStore.swift */; };
@@ -51,6 +54,9 @@
 		C9505E88209784B800B2D198 /* SearchMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMovie.swift; sourceTree = "<group>"; };
 		C9505E8B209784FD00B2D198 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C9505E8D2097851A00B2D198 /* MovieResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResult.swift; sourceTree = "<group>"; };
+		C9505E8F2097889A00B2D198 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		C9505E902097889A00B2D198 /* MovieErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieErrors.swift; sourceTree = "<group>"; };
+		C9505E912097889A00B2D198 /* NSError+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Util.swift"; sourceTree = "<group>"; };
 		C9A9B93A2095CFA100F78C02 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		C9A9B93D2095D05D00F78C02 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9A9B9412096348400F78C02 /* HistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataStore.swift; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 		C9A9B93C2095D03200F78C02 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C9505E8F2097889A00B2D198 /* Alerts.swift */,
+				C9505E902097889A00B2D198 /* MovieErrors.swift */,
+				C9505E912097889A00B2D198 /* NSError+Util.swift */,
 				C9A9B93D2095D05D00F78C02 /* Constants.swift */,
 			);
 			path = Utils;
@@ -347,12 +356,15 @@
 				C9505E89209784B900B2D198 /* SearchMovie.swift in Sources */,
 				C9DA77412095A20400F09588 /* CareemTest.xcdatamodeld in Sources */,
 				C9A9B93E2095D05D00F78C02 /* Constants.swift in Sources */,
+				C9505E932097889B00B2D198 /* MovieErrors.swift in Sources */,
 				C9505E872097811900B2D198 /* NetworkUtils.swift in Sources */,
 				C9A9B93B2095CFA100F78C02 /* NetworkClient.swift in Sources */,
 				C9505E8E2097851A00B2D198 /* MovieResult.swift in Sources */,
+				C9505E922097889B00B2D198 /* Alerts.swift in Sources */,
 				C9DA776D2095CBF800F09588 /* MoviesViewController.swift in Sources */,
 				C9DA776B2095CB9400F09588 /* MovieCell.swift in Sources */,
 				C9505E8C209784FD00B2D198 /* Movie.swift in Sources */,
+				C9505E942097889B00B2D198 /* NSError+Util.swift in Sources */,
 				C9DA77392095A20400F09588 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,8 +2,6 @@
 //  File.swift
 //  CareemTest
 //
-//  Created by Arun Kumar Nama on 29/4/18.
-//  Copyright © 2018 Arun Kumar Nama. All rights reserved.
 //
 
 import Foundation
