@@ -8,121 +8,6 @@
 
 import UIKit
 
-
-public enum DataType {
-    case JSON
-    case Data
-}
-
-public protocol Request {
-    var path            : String                { get }
-    var method        : HTTPMethod            { get }
-    var parameters    : RequestParams            { get }
-    var headers        : [String: Any]?        { get }
-    var dataType        : DataType                { get }
-}
-
-public enum HTTPMethod: String {
-    case post            = "POST"
-    case put                = "PUT"
-    case get                = "GET"
-    case delete            = "DELETE"
-    case patch            = "PATCH"
-}
-
-
-public enum RequestParams {
-    case body(_ : [String: Any]?)
-    case url(_ : [String: Any]?)
-}
-
-public enum UserRequests: Request {
-    
-    case search(name: String)
-    case imageDownload(poster_path : String)
-    
-    public var path: String {
-        switch self {
-        case .search(_):
-            return Constants.Path.searchPath
-        case .imageDownload(let poster_path):
-            return Constants.Path.imagePath + poster_path
-        }
-    }
-    
-    public var method: HTTPMethod {
-        switch self {
-        case .search(_):
-            return .get
-        case .imageDownload(_):
-            return .get
-        }
-    }
-    
-    public var parameters: RequestParams {
-        switch self {
-        case .search(let name):
-            return .url(
-                ["api_key" : Constants.api_key,
-                 "query": name,
-                 "page":"1"])
-        case .imageDownload(_):
-            return .url(
-                [:])
-        }
-        
-        
-    }
-    
-    
-    public var headers: [String : Any]? {
-        switch self {
-        default:
-            return nil
-        }
-    }
-    
-    public var dataType: DataType {
-        switch self {
-        case .search(_):
-            return .JSON
-        case .imageDownload:
-            return .Data
-        }
-    }
-}
-
-public struct Environment {
-    
-    public var name: String
-    
-    public var host: String
-    
-    public var headers: [String: Any] = [:]
-    
-    public var cachePolicy: URLRequest.CachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-    
-    public init(_ name: String, host: String) {
-        self.name = name
-        self.host = host
-    }
-    
-    //    http://api.themoviedb.org/3/search/movie?api_key=2696829a81b1b5827d515ff121700838&query=batman&page=1
-    
-}
-
-
-
-public enum NetworkErrors: Error {
-    case badInput
-    case noData
-}
-
-public enum Result<Value> {
-    case success(Data?)
-    case failure(Error)
-}
-
 public class NetworkDispatcher {
     
     private var environment: Environment
@@ -133,8 +18,10 @@ public class NetworkDispatcher {
     }
     
     public func execute(request: Request, completion: ((Result<Data>) -> Void)?) {
+        
         do {
-            let rq = try self.prepareURLRequest(for: request) //TODO Handle error
+            let rq = try self.prepareURLRequest(for: request)
+            //TODO Handle error
             let task = self.session.dataTask(with: rq) { (responseData, response, responseError) in
                 DispatchQueue.main.async {
                     if let error = responseError {

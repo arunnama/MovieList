@@ -17,7 +17,6 @@ enum HistoryDataStoreError: Error {
 class HistoryDataStore: NSObject {
     
     static func retriveHistory() -> [String] {
-        
         guard let history = UserDefaults.standard.stringArray(forKey: "history") else { return []}
         return history;
     }
@@ -30,6 +29,7 @@ class HistoryDataStore: NSObject {
         if historyData.count == HISTORY_COUNT {
             historyData.removeLast();
         }
+        guard (historyData.first != name) else {return}
         historyData.append(name);
         UserDefaults.standard.set(historyData, forKey: "history");
     }

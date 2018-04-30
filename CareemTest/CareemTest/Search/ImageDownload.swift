@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageDonwload: NSObject {
+class ImageDownload: NSObject {
  
     static func downloadImage(url: String, completion: @escaping (_ image: UIImage?, _ error: Error? ) -> Void) {
         let imageCache = NSCache<NSString, UIImage>();
@@ -16,7 +16,7 @@ class ImageDonwload: NSObject {
         if let cachedImage = imageCache.object(forKey: url as NSString) {
             completion(cachedImage, nil)
         } else {
-            let apiClient = NetworkDispatcher (name: "downloadImage", host: "http://image.tmdb.org");
+            let apiClient = NetworkDispatcher (name: "downloadImage", host: Constants.Api.imageHost);
             let req = UserRequests.imageDownload(poster_path: url)
             apiClient.execute(request: req) { (result) in
                 switch result {
@@ -30,9 +30,7 @@ class ImageDonwload: NSObject {
                 case .failure(let error):
                     completion(nil, error);
                 }
-                
             }
         }
-        
     }
 }
