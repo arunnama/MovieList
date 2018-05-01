@@ -1,15 +1,14 @@
 //
-//  CareemTestTests.swift
+//  UtilTestCases.swift
 //  CareemTestTests
 //
-//  Created by Arun Kumar Nama on 29/4/18.
+//  Created by Arun Kumar Nama on 1/5/18.
 //  Copyright © 2018 Arun Kumar Nama. All rights reserved.
 //
 
 import XCTest
-@testable import CareemTest
 
-class CareemTestTests: XCTestCase {
+class UtilTestCases: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,7 +20,7 @@ class CareemTestTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample(){
+    func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
@@ -31,6 +30,13 @@ class CareemTestTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testMovieErrorsReturnNonNilTitleAndMessage() {
+        
+       
+        
+        
     }
     
 }

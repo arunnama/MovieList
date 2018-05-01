@@ -7,7 +7,35 @@
 		<key>CareemTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>CareemTestTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>CareemTestUITests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C9DA77342095A20400F09588</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9DA774B2095A20500F09588</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9DA77562095A20500F09588</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -17,11 +17,10 @@ public class NetworkDispatcher {
         self.session = URLSession(configuration: URLSessionConfiguration.default)
     }
     
-    public func execute(request: Request, completion: ((Result<Data>) -> Void)?) {
+    public func execute(request: Request, completion: ((Result<Any>) -> Void)?) {
         
         do {
             let rq = try self.prepareURLRequest(for: request)
-            //TODO Handle error
             let task = self.session.dataTask(with: rq) { (responseData, response, responseError) in
                 DispatchQueue.main.async {
                     if let error = responseError {
@@ -29,15 +28,15 @@ public class NetworkDispatcher {
                     } else if ((responseData) != nil) {
                         completion?(.success(responseData))
                     } else {
-                        let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
+                        let error = NSError(domain: "Network", code: 10000, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
                         completion?(.failure(error))
                     }
                 }
             }
-            
             task.resume()
         }catch {
-            
+            let error = NSError(domain: "Network", code: 10000, userInfo: [NSLocalizedDescriptionKey : "Error in Network api"]) as Error
+            completion?(.failure(error))
         }
     }
     

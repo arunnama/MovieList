@@ -11,12 +11,12 @@ import Foundation
 
 struct Movie : Codable {
     
-    let poster_path: String
+    let poster_path: String?
     let title: String
     let release_date: String
     let overview: String
     
-    init(poster: String, name: String, releaseDate: String,overview: String) throws{
+    init(poster: String?, name: String, releaseDate: String,overview: String){
         self.poster_path = poster;
         self.title = name;
         self.release_date = releaseDate;

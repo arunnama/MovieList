@@ -30,6 +30,16 @@
 		C9DA775C2095A20500F09588 /* CareemTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA775B2095A20500F09588 /* CareemTestUITests.swift */; };
 		C9DA776B2095CB9400F09588 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA776A2095CB9400F09588 /* MovieCell.swift */; };
 		C9DA776D2095CBF800F09588 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DA776C2095CBF800F09588 /* MoviesViewController.swift */; };
+		C9ED7DF42098167D006E2078 /* UtilTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7DF32098167D006E2078 /* UtilTestCases.swift */; };
+		C9ED7DF52098172E006E2078 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E8F2097889A00B2D198 /* Alerts.swift */; };
+		C9ED7DF62098172E006E2078 /* MovieErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E902097889A00B2D198 /* MovieErrors.swift */; };
+		C9ED7DF72098172E006E2078 /* NSError+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E912097889A00B2D198 /* NSError+Util.swift */; };
+		C9ED7DF82098172E006E2078 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93D2095D05D00F78C02 /* Constants.swift */; };
+		C9ED7DF92098172F006E2078 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E8F2097889A00B2D198 /* Alerts.swift */; };
+		C9ED7DFA2098172F006E2078 /* MovieErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E902097889A00B2D198 /* MovieErrors.swift */; };
+		C9ED7DFB2098172F006E2078 /* NSError+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E912097889A00B2D198 /* NSError+Util.swift */; };
+		C9ED7DFC2098172F006E2078 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93D2095D05D00F78C02 /* Constants.swift */; };
+		C9ED7DFE20987CFF006E2078 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7DFD20987CFF006E2078 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +87,8 @@
 		C9DA775D2095A20500F09588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9DA776A2095CB9400F09588 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		C9DA776C2095CBF800F09588 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		C9ED7DF32098167D006E2078 /* UtilTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTestCases.swift; sourceTree = "<group>"; };
+		C9ED7DFD20987CFF006E2078 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +141,7 @@
 				C9505E902097889A00B2D198 /* MovieErrors.swift */,
 				C9505E912097889A00B2D198 /* NSError+Util.swift */,
 				C9A9B93D2095D05D00F78C02 /* Constants.swift */,
+				C9ED7DFD20987CFF006E2078 /* Stack.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -176,9 +189,9 @@
 				C9505E8A209784EB00B2D198 /* Model */,
 				C9A9B9402095D48F00F78C02 /* DataStore */,
 				C9A9B93F2095D47E00F78C02 /* Search */,
-				C9A9B93C2095D03200F78C02 /* Utils */,
 				C9A9B9392095CF6C00F78C02 /* Networking */,
 				C9DA77692095CB7A00F09588 /* Controllers */,
+				C9A9B93C2095D03200F78C02 /* Utils */,
 				C9DA77382095A20400F09588 /* AppDelegate.swift */,
 				C9DA773C2095A20400F09588 /* Main.storyboard */,
 				C9DA77422095A20400F09588 /* Assets.xcassets */,
@@ -194,6 +207,7 @@
 			children = (
 				C9DA77502095A20500F09588 /* CareemTestTests.swift */,
 				C9DA77522095A20500F09588 /* Info.plist */,
+				C9ED7DF32098167D006E2078 /* UtilTestCases.swift */,
 			);
 			path = CareemTestTests;
 			sourceTree = "<group>";
@@ -363,6 +377,7 @@
 				C9505E922097889B00B2D198 /* Alerts.swift in Sources */,
 				C9DA776D2095CBF800F09588 /* MoviesViewController.swift in Sources */,
 				C9DA776B2095CB9400F09588 /* MovieCell.swift in Sources */,
+				C9ED7DFE20987CFF006E2078 /* Stack.swift in Sources */,
 				C9505E8C209784FD00B2D198 /* Movie.swift in Sources */,
 				C9505E942097889B00B2D198 /* NSError+Util.swift in Sources */,
 				C9DA77392095A20400F09588 /* AppDelegate.swift in Sources */,
@@ -373,8 +388,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9ED7DF42098167D006E2078 /* UtilTestCases.swift in Sources */,
+				C9ED7DF72098172E006E2078 /* NSError+Util.swift in Sources */,
 				C9A9B94520963DF100F78C02 /* HistoryDataStore.swift in Sources */,
+				C9ED7DF52098172E006E2078 /* Alerts.swift in Sources */,
+				C9ED7DF82098172E006E2078 /* Constants.swift in Sources */,
 				C9DA77512095A20500F09588 /* CareemTestTests.swift in Sources */,
+				C9ED7DF62098172E006E2078 /* MovieErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,8 +403,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9A9B94620963DF200F78C02 /* HistoryDataStore.swift in Sources */,
+				C9ED7DFB2098172F006E2078 /* NSError+Util.swift in Sources */,
 				C9A9B9442096357F00F78C02 /* HistoryDataStoreTests.swift in Sources */,
+				C9ED7DF92098172F006E2078 /* Alerts.swift in Sources */,
+				C9ED7DFC2098172F006E2078 /* Constants.swift in Sources */,
 				C9DA775C2095A20500F09588 /* CareemTestUITests.swift in Sources */,
+				C9ED7DFA2098172F006E2078 /* MovieErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

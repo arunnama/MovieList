@@ -2,11 +2,9 @@
 import UIKit
 
 class SearchMovie: NSObject {
-    func search(name: String, page:Int, completion:@escaping (MovieResults)->Void) {
-       // http://api.themoviedb.org/3/search/movie?api_key=2696829a81b1b5827d515ff121700838&query=batman&page=1
-        let apiClient = NetworkDispatcher(name: "search", host: "http://api.themoviedb.org");
-        
-        print("what is the name and page now is >>>>> ,\(name) and \(page)")
+    
+    func search(name: String, page:Int, completion:@escaping (MovieResults, MovieError?)->Void) {
+        let apiClient = NetworkDispatcher(name: "search", host: Constants.Api.searchHost);
         let req = UserRequests.search(name: name, page:"\(page)");
         apiClient.execute(request: req) { (result) in
             switch result {
@@ -15,18 +13,17 @@ class SearchMovie: NSObject {
                     let decoder = JSONDecoder()
                     do {
                         let movieResults  = try decoder.decode(MovieResults.self, from: jsonData)
-                        completion(movieResults)
+                        completion(movieResults,nil)
                     }
-                    catch{
-                        print("error in json serialization")
-                        completion(MovieResults())
+                    catch let error {
+                        print(error)
+                        completion(MovieResults(),MovieError.InvalidData)
                     }
                 }
             case .failure(let error):
-                completion(MovieResults());
+                print(error)
+                completion(MovieResults(),MovieError.NetworkError);
             }
-            
-            
         }
     }
 }

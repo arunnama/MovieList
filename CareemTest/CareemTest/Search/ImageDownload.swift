@@ -10,10 +10,11 @@ import UIKit
 
 class ImageDownload: NSObject {
  
-    static func downloadImage(url: String, completion: @escaping (_ image: UIImage?, _ error: Error? ) -> Void) {
-        let imageCache = NSCache<NSString, UIImage>();
-        
+    let imageCache = NSCache<NSString, UIImage>();
+    
+    func downloadImage(url: String, completion: @escaping (_ image: UIImage?, _ error: Error? ) -> Void) {
         if let cachedImage = imageCache.object(forKey: url as NSString) {
+            print("Image is from cache");
             completion(cachedImage, nil)
         } else {
             let apiClient = NetworkDispatcher (name: "downloadImage", host: Constants.Api.imageHost);
@@ -22,7 +23,7 @@ class ImageDownload: NSObject {
                 switch result {
                 case .success(let data):
                     if let data = data, let image = UIImage(data: data) {
-                        imageCache.setObject(image, forKey: url as NSString)
+                        self.imageCache.setObject(image, forKey: url as NSString)
                         completion(image, nil)
                     } else {
                         completion(nil, nil)

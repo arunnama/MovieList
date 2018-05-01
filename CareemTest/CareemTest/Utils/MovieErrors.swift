@@ -7,15 +7,12 @@
 
 import UIKit
 
-class MovieErrors: Error {
-
-    
-}
-
-enum MovieError : Error {
+enum MovieError : Error  {
     case EmptyName 
     case EmptyPoster
     case NoMoviesFound
+    case NetworkError
+    case InvalidData
     case Unknown
     
     public var title: String {
@@ -26,6 +23,10 @@ enum MovieError : Error {
             return "Empty Poster Error"
         case .NoMoviesFound:
             return "No Movies found Error"
+        case .NetworkError:
+            return "Connection Error"
+        case .InvalidData:
+            return "Invalid Data Error"
         case .Unknown:
             return "Unknow error"
         }
@@ -39,6 +40,10 @@ enum MovieError : Error {
             return "There is no poster for this movie"
         case .NoMoviesFound:
             return "No Movies found for this movie title. Please search for any other"
+        case .NetworkError:
+            return "Connection has some error. Please try later"
+        case .InvalidData:
+            return "Invalid data is received from server. Please try later"
         case .Unknown:
             return "Unknow error is found. please try again."
         }
