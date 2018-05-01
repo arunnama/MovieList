@@ -26,7 +26,7 @@ class MoviesViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        setupSearch()
+        self.setupSearch()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +54,7 @@ class MoviesViewController: UITableViewController {
             isSearchInProgress = false;
             movies = []
             searchController.searchBar.resignFirstResponder()
-            search(name:history[indexPath.row]);
+            self.search(name:history[indexPath.row]);
         }
     }
     
@@ -67,21 +67,21 @@ class MoviesViewController: UITableViewController {
             return historyCell;
         }
         else {
-            return configureCell(tableView, indexPath)
+            let movieCell: MovieCell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell;
+            return configureCell(movieCell, indexPath)
         }
     }
    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if ( indexPath.row == (movies.count - pagePreloadMargin) ){
             if (tempMovieResults.page < tempMovieResults.total_pages)  {
-                print("searching is happening on ",indexPath.row,movies.count);
                 search(name:currentSearch,page: tempMovieResults.page + 1)
             }
         }
     }
     
-    fileprivate func configureCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
-        let movieCell: MovieCell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell;
+    fileprivate func configureCell(_ movieCell: MovieCell, _ indexPath: IndexPath) -> UITableViewCell {
+        
         movieCell.lblMovie_title.text = movies[indexPath.row].title
         movieCell.lblRelease_date.text = movies[indexPath.row].release_date
         movieCell.lblOverview.text = movies[indexPath.row].overview
@@ -96,93 +96,10 @@ class MoviesViewController: UITableViewController {
         }
         return movieCell
     }
+}
 
-    // MARK: - Search
-    
-    func search(name:String, page:Int=1) {
-        print("searching for \(name) and page is::: , \(page)")
-        DispatchQueue.global(qos: .background).async {
-            // let searchItem = self.searchController.searchBar.text
-            let searchClient = SearchMovie()
-            searchClient.search(name: name, page:page) { movieResults, movieError in
-                if (movieError != nil) {
-                    self.showErrorAlert(error:movieError!)
-                }
-                else if (movieResults.total_results == 0){
-                     self.showErrorAlert(error:MovieError.NoMoviesFound)
-                }
-                else{
-                    self.updateSearchResults(name, movieResults);
-                }
-            }
-        }
-    }
-    
-    fileprivate func updateSearchResults(_ name:String, _ movieResult: (MovieResults)){
-        do {
-            tempMovieResults = movieResult
-            guard let moviesBatch = movieResult.results else { return }
-            print(moviesBatch);
-            if (moviesBatch.count > 0)
-            {
-                if (self.movies.count == 0) {try HistoryDataStore.saveSearch(name)}
-                self.movies.append(contentsOf: moviesBatch)
-                self.currentSearch = name
-                self.tableView.reloadData();
-            } else {
-                if self.searchController.isActive {
-                    self.searchController.dismiss(animated: false) {
-                    }
-                }
-                if (self.movies.count == 0) {
-                    self.showErrorAlert(error: MovieError.NoMoviesFound)
-                }
-            }
-            
-        }catch{
-            self.showErrorAlert(error: MovieError.Unknown)
-        }
-    }
-    
-    
-    
-}
-extension MoviesViewController: UISearchBarDelegate {
-    
-    func setupSearch(){
-        tableView.tableHeaderView = searchController.searchBar;
-        searchController.searchBar.delegate = self
-        searchController.dimsBackgroundDuringPresentation = false
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchController.searchBar.showsCancelButton = false
-        searchController.searchBar.text = ""
-        searchController.searchBar.resignFirstResponder()
-        isSearchInProgress = false;
-        searchController.isActive = false;
-        tableView.reloadData();
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        isSearchInProgress = false;
-        guard let searchText = searchBar.text, !(searchBar.text?.isEmpty)! else {
-            return
-        }
-        movies = []
-        isNewSearch = true;
-        self.search(name:searchText)
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        isSearchInProgress = true;
-        history = HistoryDataStore.retriveHistory();
-        tableView.reloadData();
-        searchController.searchBar.showsCancelButton = true
-    }
-    
-}
+
+
 
 
 

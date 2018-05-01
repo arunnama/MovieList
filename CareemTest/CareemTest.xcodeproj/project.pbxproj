@@ -13,7 +13,7 @@
 		C9505E8E2097851A00B2D198 /* MovieResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E8D2097851A00B2D198 /* MovieResult.swift */; };
 		C9505E922097889B00B2D198 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E8F2097889A00B2D198 /* Alerts.swift */; };
 		C9505E932097889B00B2D198 /* MovieErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E902097889A00B2D198 /* MovieErrors.swift */; };
-		C9505E942097889B00B2D198 /* NSError+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E912097889A00B2D198 /* NSError+Util.swift */; };
+		C96C5EEA2098963100FB86A1 /* MoviesSearchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96C5EE92098963100FB86A1 /* MoviesSearchExtension.swift */; };
 		C9A9B93B2095CFA100F78C02 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93A2095CFA100F78C02 /* NetworkClient.swift */; };
 		C9A9B93E2095D05D00F78C02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93D2095D05D00F78C02 /* Constants.swift */; };
 		C9A9B9422096348400F78C02 /* HistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B9412096348400F78C02 /* HistoryDataStore.swift */; };
@@ -33,13 +33,10 @@
 		C9ED7DF42098167D006E2078 /* UtilTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7DF32098167D006E2078 /* UtilTestCases.swift */; };
 		C9ED7DF52098172E006E2078 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E8F2097889A00B2D198 /* Alerts.swift */; };
 		C9ED7DF62098172E006E2078 /* MovieErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E902097889A00B2D198 /* MovieErrors.swift */; };
-		C9ED7DF72098172E006E2078 /* NSError+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E912097889A00B2D198 /* NSError+Util.swift */; };
 		C9ED7DF82098172E006E2078 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93D2095D05D00F78C02 /* Constants.swift */; };
 		C9ED7DF92098172F006E2078 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E8F2097889A00B2D198 /* Alerts.swift */; };
 		C9ED7DFA2098172F006E2078 /* MovieErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E902097889A00B2D198 /* MovieErrors.swift */; };
-		C9ED7DFB2098172F006E2078 /* NSError+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9505E912097889A00B2D198 /* NSError+Util.swift */; };
 		C9ED7DFC2098172F006E2078 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A9B93D2095D05D00F78C02 /* Constants.swift */; };
-		C9ED7DFE20987CFF006E2078 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED7DFD20987CFF006E2078 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +63,7 @@
 		C9505E8D2097851A00B2D198 /* MovieResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResult.swift; sourceTree = "<group>"; };
 		C9505E8F2097889A00B2D198 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		C9505E902097889A00B2D198 /* MovieErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieErrors.swift; sourceTree = "<group>"; };
-		C9505E912097889A00B2D198 /* NSError+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Util.swift"; sourceTree = "<group>"; };
+		C96C5EE92098963100FB86A1 /* MoviesSearchExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSearchExtension.swift; sourceTree = "<group>"; };
 		C9A9B93A2095CFA100F78C02 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		C9A9B93D2095D05D00F78C02 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9A9B9412096348400F78C02 /* HistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataStore.swift; sourceTree = "<group>"; };
@@ -88,7 +85,6 @@
 		C9DA776A2095CB9400F09588 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		C9DA776C2095CBF800F09588 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		C9ED7DF32098167D006E2078 /* UtilTestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTestCases.swift; sourceTree = "<group>"; };
-		C9ED7DFD20987CFF006E2078 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +135,7 @@
 			children = (
 				C9505E8F2097889A00B2D198 /* Alerts.swift */,
 				C9505E902097889A00B2D198 /* MovieErrors.swift */,
-				C9505E912097889A00B2D198 /* NSError+Util.swift */,
 				C9A9B93D2095D05D00F78C02 /* Constants.swift */,
-				C9ED7DFD20987CFF006E2078 /* Stack.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -227,6 +221,7 @@
 			children = (
 				C9DA776A2095CB9400F09588 /* MovieCell.swift */,
 				C9DA776C2095CBF800F09588 /* MoviesViewController.swift */,
+				C96C5EE92098963100FB86A1 /* MoviesSearchExtension.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -376,10 +371,9 @@
 				C9505E8E2097851A00B2D198 /* MovieResult.swift in Sources */,
 				C9505E922097889B00B2D198 /* Alerts.swift in Sources */,
 				C9DA776D2095CBF800F09588 /* MoviesViewController.swift in Sources */,
+				C96C5EEA2098963100FB86A1 /* MoviesSearchExtension.swift in Sources */,
 				C9DA776B2095CB9400F09588 /* MovieCell.swift in Sources */,
-				C9ED7DFE20987CFF006E2078 /* Stack.swift in Sources */,
 				C9505E8C209784FD00B2D198 /* Movie.swift in Sources */,
-				C9505E942097889B00B2D198 /* NSError+Util.swift in Sources */,
 				C9DA77392095A20400F09588 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +383,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9ED7DF42098167D006E2078 /* UtilTestCases.swift in Sources */,
-				C9ED7DF72098172E006E2078 /* NSError+Util.swift in Sources */,
 				C9A9B94520963DF100F78C02 /* HistoryDataStore.swift in Sources */,
 				C9ED7DF52098172E006E2078 /* Alerts.swift in Sources */,
 				C9ED7DF82098172E006E2078 /* Constants.swift in Sources */,
@@ -403,7 +396,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9A9B94620963DF200F78C02 /* HistoryDataStore.swift in Sources */,
-				C9ED7DFB2098172F006E2078 /* NSError+Util.swift in Sources */,
 				C9A9B9442096357F00F78C02 /* HistoryDataStoreTests.swift in Sources */,
 				C9ED7DF92098172F006E2078 /* Alerts.swift in Sources */,
 				C9ED7DFC2098172F006E2078 /* Constants.swift in Sources */,

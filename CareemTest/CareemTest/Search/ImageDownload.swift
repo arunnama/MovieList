@@ -14,7 +14,6 @@ class ImageDownload: NSObject {
     
     func downloadImage(url: String, completion: @escaping (_ image: UIImage?, _ error: Error? ) -> Void) {
         if let cachedImage = imageCache.object(forKey: url as NSString) {
-            print("Image is from cache");
             completion(cachedImage, nil)
         } else {
             let apiClient = NetworkDispatcher (name: "downloadImage", host: Constants.Api.imageHost);
