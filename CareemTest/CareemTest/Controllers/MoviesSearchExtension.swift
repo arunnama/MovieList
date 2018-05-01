@@ -10,6 +10,8 @@ import UIKit
 
 extension MoviesViewController: UISearchBarDelegate {
     
+   
+    
     func setupSearch(){
         tableView.tableHeaderView = searchController.searchBar;
         searchController.searchBar.delegate = self
@@ -34,13 +36,14 @@ extension MoviesViewController: UISearchBarDelegate {
             return
         }
         movies = []
+        searchController.isActive = false
         isNewSearch = true;
         self.search(name:searchText)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         isSearchInProgress = true;
-        history = HistoryDataStore.retriveHistory();
+        history = historyDS.retriveHistory();
         tableView.reloadData();
         searchController.searchBar.showsCancelButton = true
     }
@@ -75,7 +78,7 @@ extension MoviesViewController: UISearchBarDelegate {
             guard let moviesBatch = movieResult.results else { return }
             if (moviesBatch.count > 0)
             {
-                if (self.movies.count == 0) {try HistoryDataStore.saveSearch(name)}
+                if (self.movies.count == 0) {try historyDS.saveSearch(name)}
                 self.movies.append(contentsOf: moviesBatch)
                 self.currentSearch = name
                 self.tableView.reloadData();

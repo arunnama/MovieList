@@ -9,9 +9,12 @@
 import XCTest
 
 class HistoryDataStoreTests: XCTestCase {
-    var testee: HistoryDataStore!
+    var historyDS: HistoryDataStore!
+    
     override func setUp() {
         super.setUp()
+        historyDS = HistoryDataStore();
+        UserDefaults.standard.removeObject(forKey: Constants.HistoryKey)
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         // In UI tests it is usually best to stop immediately when a failure occurs.
@@ -29,21 +32,21 @@ class HistoryDataStoreTests: XCTestCase {
  
     func testSaveHistory()  {
         let expectedName = "movie name"
-        try? HistoryDataStore.saveSearch(expectedName);
-        XCTAssertEqual(HistoryDataStore.retriveHistory().first, expectedName);
+        try? historyDS.saveSearch(expectedName);
+        XCTAssertEqual(historyDS.retriveHistory().first, expectedName);
     }
     
     func testSaveHistoryWithEmptyString() {
-        XCTAssertThrowsError(try HistoryDataStore.saveSearch("")) { (error) -> Void in
+        XCTAssertThrowsError(try historyDS.saveSearch("")) { (error) -> Void in
             XCTAssertEqual(error as? HistoryDataStoreError, HistoryDataStoreError.EmptySaveOperation)
         }
     }
     
     func testSaveHistoryWithMoreThanHistoryCount() {
-        for _ in 1...20 {
-            let expectedName = "movie name "
-            try? HistoryDataStore.saveSearch(expectedName);
+        for index in 1...Constants.HISTORY_COUNT+5 {
+            let expectedName = "movie name"+"\(index)"
+            try? historyDS.saveSearch(expectedName);
         }
-        XCTAssertEqual(HistoryDataStore.retriveHistory().count, 10)
+        XCTAssertEqual(historyDS.retriveHistory().count, Constants.HISTORY_COUNT)
     }
 }

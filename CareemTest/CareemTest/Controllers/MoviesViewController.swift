@@ -18,7 +18,8 @@ class MoviesViewController: UITableViewController {
     var isNewSearch = true;
     var currentSearch = ""
     var pagePreloadMargin = 10;
-    var imageDownloader = ImageDownload();
+    let imageDownloader = ImageDownload();
+    let historyDS = HistoryDataStore()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -26,6 +27,7 @@ class MoviesViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        definesPresentationContext = true
         self.setupSearch()
     }
 
@@ -54,6 +56,7 @@ class MoviesViewController: UITableViewController {
             isSearchInProgress = false;
             movies = []
             searchController.searchBar.resignFirstResponder()
+            searchController.isActive = false
             self.search(name:history[indexPath.row]);
         }
     }

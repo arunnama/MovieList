@@ -1,5 +1,5 @@
 //
-//  UtilTestCases.swift
+//  MovieObjectTests.swift
 //  CareemTestTests
 //
 //  Created by Arun Kumar Nama on 1/5/18.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class UtilTestCases: XCTestCase {
+class MovieObjectTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -32,4 +32,16 @@ class UtilTestCases: XCTestCase {
         }
     }
     
+    func testMovieCreation()
+    {
+        XCTAssertNotNil(Movie.init(poster: "hello world.jpeg", name: "hello", releaseDate: "hello", overview: "testing overiew"));
+        XCTAssertNotNil(Movie.init(poster: nil, name: "hello", releaseDate: "hello", overview: "testing overiew"));
+    }
+    
+    func testMovieResultCreation()
+    {
+        XCTAssertNotNil(MovieResults.init());
+
+    }
+
 }

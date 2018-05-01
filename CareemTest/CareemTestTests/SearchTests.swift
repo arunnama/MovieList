@@ -1,5 +1,5 @@
 //
-//  UtilTestCases.swift
+//  SearchTests.swift
 //  CareemTestTests
 //
 //  Created by Arun Kumar Nama on 1/5/18.
@@ -7,8 +7,7 @@
 //
 
 import XCTest
-
-class UtilTestCases: XCTestCase {
+class SearchTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -24,6 +23,27 @@ class UtilTestCases: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func testJsonDecodeWithValidData()  {
+        let searchClient = SearchMovie()
+        let jsonTestData = SearchTests.testData()
+
+        searchClient.jsonDecode(jsonTestData!) { (movieResults, error) in
+            XCTAssertNotNil(movieResults)
+            XCTAssertEqual(movieResults.page, 1)
+        }
+    }
+    
+  
+    static func testData() ->Data? {
+        let bundle = Bundle (for: self)
+        guard let url = bundle.url(forResource: "Movies", withExtension: "json") else {
+            return nil
+        }
+        let json = try? Data(contentsOf: url)
+        return json
+    }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
