@@ -50,6 +50,17 @@ extension MoviesViewController: UISearchBarDelegate {
     
     // MARK: - Search 
     
+    func search(name:String, page:Int=1) {
+        DispatchQueue.global(qos: .background).async {
+            let searchClient = SearchMovie()
+            searchClient.search(name: name, page:page) { movieResults, movieError in
+                DispatchQueue.main.async {
+                     self.handleSearchResults(name, movieError, movieResults)
+                }
+            }
+        }
+    }
+    
     fileprivate func handleSearchResults(_ name: String, _ movieError: MovieError?, _ movieResults: MovieResults) {
         if (movieError != nil) {
             self.showErrorAlert(error:movieError!)
@@ -59,16 +70,6 @@ extension MoviesViewController: UISearchBarDelegate {
         }
         else{
             self.updateSearchResults(name, movieResults);
-        }
-    }
-    
-    func search(name:String, page:Int=1) {
-        DispatchQueue.global(qos: .background).async {
-            // let searchItem = self.searchController.searchBar.text
-            let searchClient = SearchMovie()
-            searchClient.search(name: name, page:page) { movieResults, movieError in
-                self.handleSearchResults(name, movieError, movieResults)
-            }
         }
     }
     

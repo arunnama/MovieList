@@ -70,8 +70,8 @@ class MoviesViewController: UITableViewController {
             return historyCell;
         }
         else {
-            let movieCell: MovieCell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell;
-            return configureCell(movieCell, indexPath)
+           
+            return configureCell(tableView, indexPath)
         }
     }
    
@@ -83,17 +83,19 @@ class MoviesViewController: UITableViewController {
         }
     }
     
-    fileprivate func configureCell(_ movieCell: MovieCell, _ indexPath: IndexPath) -> UITableViewCell {
-        
+    fileprivate func configureCell(_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell {
+        let movieCell: MovieCell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieCell;
         movieCell.lblMovie_title.text = movies[indexPath.row].title
         movieCell.lblRelease_date.text = movies[indexPath.row].release_date
         movieCell.lblOverview.text = movies[indexPath.row].overview
         movieCell.imgMovie_poster.image = nil;
         DispatchQueue.global(qos: .background).async {
+            
             guard let poster_path = self.movies[indexPath.row].poster_path else { return }
             self.imageDownloader.downloadImage(url: poster_path, completion: { (image, error) in
                 DispatchQueue.main.async {
-                    movieCell.imgMovie_poster.image = image
+                    guard let movieCellUpdate = tableView.cellForRow(at: indexPath) as? MovieCell else { return }
+                    movieCellUpdate.imgMovie_poster.image = image
                 }
             })
         }
