@@ -20,6 +20,6 @@ struct Constants {
     public static let api_key = "2696829a81b1b5827d515ff121700838"
     
     public static let HistoryKey = "history"
-    public static let HISTORY_COUNT = 4;
+    public static let HISTORY_COUNT = 10;
     
 }

@@ -28,9 +28,48 @@ class SearchUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testJsonDecodeWithValidData()  {
+        let searchClient = SearchMovie()
+        let jsonTestData = SearchUITests.testData()
+        
+        searchClient.jsonDecode(jsonTestData!) { (movieResults, error) in
+            XCTAssertNotNil(movieResults)
+            XCTAssertEqual(movieResults.page, 1)
+        }
+    }
+    
+    func testJsonDecodeWithInValidData()  {
+        let searchClient = SearchMovie()
+        let jsonTestData = SearchUITests.testInvalidData()
+        
+        searchClient.jsonDecode(jsonTestData!) { (movieResults, error) in
+            XCTAssertEqual(error, MovieError.InvalidData)
+        }
+    }
+    
+    func testSearchApiCall() {
+        
+        let searchResultExpectation = expectation(description: "Search Expectation")
+        let searchClient = SearchMovie()
+        
+        searchClient.search(name: "Batman", page: 1) { (movieResults, error) in
+            searchResultExpectation.fulfill();
+        }
+        waitForExpectations(timeout: 100, handler: nil);
+    }
+
+    static func testData() ->Data? {
+        let bundle = Bundle (for: self)
+        guard let url = bundle.url(forResource: "Movies", withExtension: "json") else {
+            return nil
+        }
+        let json = try? Data(contentsOf: url)
+        return json
+    }
+    
+    static func testInvalidData() ->Data? {
+        let json = Data(base64Encoded: "aGVsbG8gaG93IGFyZSAgeW91IA==")
+        return json
     }
     
 }

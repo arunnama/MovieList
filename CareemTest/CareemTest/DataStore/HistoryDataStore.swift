@@ -42,7 +42,6 @@ class HistoryDataStore: NSObject {
             historyData = [String]()
             historyData?.append(name)
         }
-        
         dataStore.saveData(Constants.HistoryKey,historyData!);
     }
 }

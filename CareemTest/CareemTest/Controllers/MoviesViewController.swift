@@ -70,7 +70,6 @@ class MoviesViewController: UITableViewController {
             return historyCell;
         }
         else {
-           
             return configureCell(tableView, indexPath)
         }
     }
@@ -90,7 +89,6 @@ class MoviesViewController: UITableViewController {
         movieCell.lblOverview.text = movies[indexPath.row].overview
         movieCell.imgMovie_poster.image = nil;
         DispatchQueue.global(qos: .background).async {
-            
             guard let poster_path = self.movies[indexPath.row].poster_path else { return }
             self.imageDownloader.downloadImage(url: poster_path, completion: { (image, error) in
                 DispatchQueue.main.async {
